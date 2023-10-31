@@ -5,28 +5,24 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
-import com.example.androiddotascreen.R
 
 @Composable
 fun DotaScreenHeader(
@@ -55,27 +51,47 @@ fun DotaScreenHeader(
 
 @Composable
 fun Dota_logo() {
-    Card(
-        shape = RoundedCornerShape(10.dp),
-        modifier = Modifier
-    ) {
-        Box(modifier = Modifier
-            .background(Color.Black)
-            .border(
-                width = 1.dp,
-                color = Color("#1F2430".toColorInt()),
-                shape = RoundedCornerShape(10.dp)
-            ),
-            contentAlignment = Alignment.Center
+    Row(verticalAlignment = Alignment.Bottom) {
+        Card(
+            shape = RoundedCornerShape(12.dp),
+            modifier = Modifier
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.dota_logo),
-                contentDescription = "dota logo",
-                modifier = Modifier
-                    .padding(12.dp)
-                    .size(50.dp)
+            Box(modifier = Modifier
+                .background(Color.Black)
+                .border(
+                    width = 2.dp,
+                    color = Color("#1F2430".toColorInt()),
+                    shape = RoundedCornerShape(12.dp)
+                ),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.dota_logo),
+                    contentDescription = "dota logo",
+                    modifier = Modifier
+                        .padding(12.dp)
+                        .size(50.dp)
 
-            )
+                )
+            }
+        }
+        Column(
+            modifier = Modifier.padding(start = 12.dp, bottom = 4.dp)
+        ) {
+            Text(text = "DoTA 2",
+                fontSize = 20.sp,
+                color = Color("#FFFFFF".toColorInt()))
+            Row {
+                    Image(painter = painterResource(id = R.drawable.header_grade),
+                        contentDescription = "header_grade",
+                        modifier = Modifier.size(height = 16.dp, width = 70.dp)
+                    )
+                    Text(text = "70M",
+                        fontSize = 12.sp,
+                        color = Color("#45454D".toColorInt()),
+                        modifier = Modifier.padding(start = 12.dp)
+                    )
+            }
         }
     }
 }
