@@ -25,6 +25,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
+import com.example.androiddotascreen.ui.theme.Grey
+import com.example.androiddotascreen.ui.theme.White
 
 data class ItemDataComment(
     val imageId: Int,
@@ -87,14 +89,14 @@ fun MyComment(item: ItemDataComment) {
             Column {
                 Text(text = item.userName,
                     style = MaterialTheme.typography.subtitle2,
-                    color = Color("#FFFFFF".toColorInt())
+                    color = White
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Text(text = item.date,
                     style = MaterialTheme.typography.body2,
-                    color = Color("#FFFFFF".toColorInt()),
+                    color = White,
                     modifier = Modifier
                         .alpha(0.4f))
             }
@@ -103,7 +105,7 @@ fun MyComment(item: ItemDataComment) {
         Spacer(modifier = Modifier.height(12.dp))
 
         Text(text = item.text,
-            color = Color("#A8ADB7".toColorInt()),
+            color = Grey,
             fontSize = 12.sp)
 
     }

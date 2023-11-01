@@ -13,10 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.toColorInt
+import com.example.androiddotascreen.ui.theme.LightGray
+import com.example.androiddotascreen.ui.theme.Yellow
 
 @Composable
 fun DotaScreen() {
@@ -41,7 +41,7 @@ fun DotaScreen() {
                         "which has two teams of five players compete to collectively " +
                         "destroy a large structure defended by the opposing team known " +
                         "as the \"Ancient\", whilst defending their own.",
-                color = Color("#EEF2FB".toColorInt()),
+                color = LightGray,
                 fontSize = 12.sp,
                 modifier = Modifier
                     .padding(
@@ -69,7 +69,7 @@ fun DotaScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Color("#F4D144".toColorInt())),
+                        .background(Yellow),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(text = "Install",

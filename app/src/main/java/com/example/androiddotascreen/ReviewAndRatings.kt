@@ -15,6 +15,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
+import com.example.androiddotascreen.ui.theme.DarkWhite
+import com.example.androiddotascreen.ui.theme.White
+import com.example.androiddotascreen.ui.theme.White2
 
 @Preview
 @Composable
@@ -28,7 +31,7 @@ fun ReviewAndRatings(
         Text(
             text = "Review & Ratings",
             fontSize = 16.sp,
-            color = Color("#EEF2FB".toColorInt()),
+            color = White2,
             modifier = Modifier.padding(bottom = 12.dp)
         )
         Row(
@@ -36,7 +39,7 @@ fun ReviewAndRatings(
         ) {
             Text(text = "4.9",
                 fontSize = 48.sp,
-                color = Color("#FFFFFF".toColorInt()),
+                color = White,
                 modifier = Modifier.padding(end = 24.dp)
             )
 
@@ -52,7 +55,8 @@ fun ReviewAndRatings(
 
                 Text(text = "70M Reviews",
                     fontSize = 12.sp,
-                    color = Color("#A8ADB7".toColorInt()))
+                    color = DarkWhite
+                )
             }
         }
     }

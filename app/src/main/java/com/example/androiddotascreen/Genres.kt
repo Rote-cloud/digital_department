@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
+import com.example.androiddotascreen.ui.theme.Blue
 
 @Preview
 @Composable
@@ -50,7 +51,7 @@ fun MyGenres(genre: String) {
         ) {
             Box(
                 modifier = Modifier
-                    .background(Color("#44A9F4".toColorInt()))
+                    .background(Blue)
                     .padding(start = 12.dp, end = 12.dp),
                 contentAlignment = Alignment.Center
             ) {
@@ -59,7 +60,7 @@ fun MyGenres(genre: String) {
                     fontSize = 10.sp,
                     modifier = Modifier
                         .padding(top = 4.dp, bottom = 4.dp),
-                    color = Color("#44A9F4".toColorInt())
+                    color = Blue
                 )
             }
         }
@@ -69,7 +70,7 @@ fun MyGenres(genre: String) {
             fontSize = 10.sp,
             modifier = Modifier
                 .padding(top = 4.dp, bottom = 4.dp),
-            color = Color("#44A9F4".toColorInt())
+            color = Blue
         )
     }
 }

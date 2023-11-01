@@ -23,6 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
+import com.example.androiddotascreen.ui.theme.DarkGrey
+import com.example.androiddotascreen.ui.theme.DarkGrey2
+import com.example.androiddotascreen.ui.theme.White
 
 @Composable
 fun DotaScreenHeader(
@@ -60,7 +63,7 @@ fun Dota_logo() {
                 .background(Color.Black)
                 .border(
                     width = 2.dp,
-                    color = Color("#1F2430".toColorInt()),
+                    color = DarkGrey,
                     shape = RoundedCornerShape(12.dp)
                 ),
                 contentAlignment = Alignment.Center
@@ -80,7 +83,8 @@ fun Dota_logo() {
         ) {
             Text(text = "DoTA 2",
                 fontSize = 20.sp,
-                color = Color("#FFFFFF".toColorInt()))
+                color = White
+            )
             Row {
                     Image(painter = painterResource(id = R.drawable.header_grade),
                         contentDescription = "header_grade",
@@ -88,7 +92,7 @@ fun Dota_logo() {
                     )
                     Text(text = "70M",
                         fontSize = 12.sp,
-                        color = Color("#45454D".toColorInt()),
+                        color = DarkGrey2,
                         modifier = Modifier.padding(start = 12.dp)
                     )
             }
