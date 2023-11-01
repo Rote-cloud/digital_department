@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddotascreen.ui.theme.LightGray
@@ -37,10 +38,7 @@ fun DotaScreen() {
         }
         item {
             Text(
-                text = "Dota 2 is a multiplayer online battle arena (MOBA) game " +
-                        "which has two teams of five players compete to collectively " +
-                        "destroy a large structure defended by the opposing team known " +
-                        "as the \"Ancient\", whilst defending their own.",
+                text = stringResource(id = R.string.text_screen),
                 color = LightGray,
                 fontSize = 12.sp,
                 modifier = Modifier
@@ -72,7 +70,7 @@ fun DotaScreen() {
                         .background(Yellow),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "Install",
+                    Text(text = stringResource(id = R.string.install),
                         fontSize = 24.sp,
                         modifier = Modifier
                             .padding(top = 12.dp, bottom = 12.dp)

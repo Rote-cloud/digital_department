@@ -21,10 +21,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
+import com.example.androiddotascreen.ui.theme.DarkGrey3
 import com.example.androiddotascreen.ui.theme.Grey
 import com.example.androiddotascreen.ui.theme.White
 
@@ -46,23 +48,20 @@ fun Comments(
                 .padding(bottom = 24.dp)
         ) {
 
-            MyComment(ItemDataComment(R.drawable.comment1, "Auguste Conte", "February 14, 2019",
-                "“Once you start to learn its secrets, " +
-                        "there’s a wild and exciting variety of play here " +
-                        "that’s unmatched, even by its peers.”"))
+            MyComment(ItemDataComment(R.drawable.comment1, stringResource(id = R.string.userName1),
+                stringResource(id = R.string.date),
+                stringResource(id = R.string.text_comment)))
 
             Divider(
-                color = Color("#1A1F29".toColorInt()),
-                //color = Color.Blue,
+                color = DarkGrey3,
                 thickness = 1.dp,
                 modifier = Modifier
                     .padding(start = 40.dp, end = 40.dp)
             )
 
-            MyComment(ItemDataComment(R.drawable.comment2, "Jang Marcelino", "February 14, 2019",
-                "“Once you start to learn its secrets, " +
-                        "there’s a wild and exciting variety of play here " +
-                        "that’s unmatched, even by its peers.”"))
+            MyComment(ItemDataComment(R.drawable.comment2, stringResource(id = R.string.userName2),
+                stringResource(id = R.string.date),
+                stringResource(id = R.string.text_comment)))
         }
 }
 

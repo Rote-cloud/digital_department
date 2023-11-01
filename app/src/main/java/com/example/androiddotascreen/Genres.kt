@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,9 +30,9 @@ fun Genres(
     ) {
         itemsIndexed(
             listOf(
-                "MOBA",
-                "MULTIPLAYER",
-                "STRATEGY"
+                R.string.genres_MOBA,
+                R.string.genres_MULTIPLAYER,
+                R.string.genres_STRATEGY
             )
         ) { _, item ->
             MyGenres(genre = item)
@@ -40,7 +41,7 @@ fun Genres(
 }
 
 @Composable
-fun MyGenres(genre: String) {
+fun MyGenres(genre: Int) {
     Box(contentAlignment = Alignment.Center,
         modifier = Modifier.padding(end = 12.dp)) {
         Card(
@@ -56,7 +57,7 @@ fun MyGenres(genre: String) {
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = genre,
+                    text = stringResource(id = genre),
                     fontSize = 10.sp,
                     modifier = Modifier
                         .padding(top = 4.dp, bottom = 4.dp),
@@ -66,7 +67,7 @@ fun MyGenres(genre: String) {
         }
 
         Text(
-            text = genre,
+            text = stringResource(id = genre),
             fontSize = 10.sp,
             modifier = Modifier
                 .padding(top = 4.dp, bottom = 4.dp),

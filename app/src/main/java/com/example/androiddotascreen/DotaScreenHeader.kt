@@ -1,5 +1,6 @@
 package com.example.androiddotascreen
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -34,7 +36,6 @@ fun DotaScreenHeader(
     Box() {
         Image(
             painter = painterResource(id = R.drawable.dota_header),
-            //bitmap = ImageBitmap.imageResource(R.drawable.dota_header),
             contentDescription = "dota header",
             contentScale = ContentScale.FillWidth,
             modifier = Modifier
@@ -81,7 +82,7 @@ fun Dota_logo() {
         Column(
             modifier = Modifier.padding(start = 12.dp, bottom = 4.dp)
         ) {
-            Text(text = "DoTA 2",
+            Text(text = stringResource(R.string.dota2_name),
                 fontSize = 20.sp,
                 color = White
             )
@@ -90,7 +91,7 @@ fun Dota_logo() {
                         contentDescription = "header_grade",
                         modifier = Modifier.size(height = 16.dp, width = 70.dp)
                     )
-                    Text(text = "70M",
+                    Text(text = stringResource(id = R.string.count_review),
                         fontSize = 12.sp,
                         color = DarkGrey2,
                         modifier = Modifier.padding(start = 12.dp)
