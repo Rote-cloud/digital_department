@@ -21,6 +21,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -87,21 +89,23 @@ fun Dota_logo() {
         ) {
             Text(text = stringResource(R.string.dota2_name),
                 fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.sk_modernist_bold_font)),
                 color = White
             )
             Row {
-                    Image(painter = painterResource(id = R.drawable.header_grade),
-                        contentDescription = "header_grade",
-                        modifier = Modifier.size(
-                            height = dimensionResource(id = R.dimen.dota_logo_stars_height),
-                            width = dimensionResource(id = R.dimen.dota_logo_stars_width))
-                    )
-                    Text(text = stringResource(id = R.string.count_review),
-                        fontSize = 12.sp,
-                        color = DarkGrey2,
-                        modifier = Modifier.padding(
-                            start = dimensionResource(id = R.dimen.padding_small))
-                    )
+                Image(painter = painterResource(id = R.drawable.header_grade),
+                    contentDescription = "header_grade",
+                    modifier = Modifier.size(
+                        height = dimensionResource(id = R.dimen.dota_logo_stars_height),
+                        width = dimensionResource(id = R.dimen.dota_logo_stars_width))
+                )
+                Text(text = stringResource(id = R.string.count_review),
+                    fontSize = 12.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular_font)),
+                    color = DarkGrey2,
+                    modifier = Modifier.padding(
+                        start = dimensionResource(id = R.dimen.padding_small))
+                )
             }
         }
     }

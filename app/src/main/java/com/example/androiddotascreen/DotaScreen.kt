@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import com.example.androiddotascreen.ui.theme.LightGray
 
@@ -35,6 +37,7 @@ fun DotaScreen() {
                 text = stringResource(id = R.string.text_screen),
                 color = LightGray,
                 fontSize = 12.sp,
+                fontFamily = FontFamily(Font(R.font.sk_modernist_regular_font)),
                 modifier = Modifier
                     .padding(
                         all = dimensionResource(id = R.dimen.padding_std)

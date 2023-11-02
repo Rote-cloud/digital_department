@@ -21,6 +21,8 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.androiddotascreen.ui.theme.Yellow
@@ -55,6 +57,7 @@ fun ButtonInstall(
         ) {
             Text(text = stringResource(id = R.string.install),
                 fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.sk_modernist_bold_font)),
                 modifier = Modifier
                     .padding(top = dimensionResource(id = R.dimen.padding_verysmall),
                         bottom = dimensionResource(id = R.dimen.padding_verysmall))

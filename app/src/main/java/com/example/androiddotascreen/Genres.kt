@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -61,6 +63,7 @@ fun MyGenres(genre: Int) {
                 Text(
                     text = stringResource(id = genre),
                     fontSize = 10.sp,
+                    fontFamily = FontFamily(Font(R.font.montserrat_light)),
                     modifier = Modifier
                         .padding(top = dimensionResource(id = R.dimen.padding_veryverysmall),
                             bottom = dimensionResource(id = R.dimen.padding_veryverysmall)),
@@ -72,6 +75,7 @@ fun MyGenres(genre: Int) {
         Text(
             text = stringResource(id = genre),
             fontSize = 10.sp,
+            fontFamily = FontFamily(Font(R.font.montserrat_light)),
             modifier = Modifier
                 .padding(top = 4.dp, bottom = 4.dp),
             color = Blue

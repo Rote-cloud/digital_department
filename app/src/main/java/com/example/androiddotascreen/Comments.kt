@@ -22,10 +22,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddotascreen.ui.theme.DarkGrey3
+import com.example.androiddotascreen.ui.theme.FontFamily
 import com.example.androiddotascreen.ui.theme.Grey
 import com.example.androiddotascreen.ui.theme.White
 
@@ -41,30 +44,30 @@ data class ItemDataComment(
 fun Comments(
     modifier: Modifier = Modifier
 ) {
-        Column(
-            modifier= Modifier
-                .fillMaxWidth()
-                .padding(bottom = dimensionResource(id = R.dimen.padding_std))
-        ) {
+    Column(
+        modifier= Modifier
+            .fillMaxWidth()
+            .padding(bottom = dimensionResource(id = R.dimen.padding_std))
+    ) {
 
-            MyComment(ItemDataComment(R.drawable.comment1,
-                stringResource(id = R.string.userName1),
-                stringResource(id = R.string.date),
-                stringResource(id = R.string.text_comment)))
+        MyComment(ItemDataComment(R.drawable.comment1,
+            stringResource(id = R.string.userName1),
+            stringResource(id = R.string.date),
+            stringResource(id = R.string.text_comment)))
 
-            Divider(
-                color = DarkGrey3,
-                thickness = 1.dp,
-                modifier = Modifier
-                    .padding(start = dimensionResource(id = R.dimen.padding_big),
-                        end = dimensionResource(id = R.dimen.padding_big))
-            )
+        Divider(
+            color = DarkGrey3,
+            thickness = 1.dp,
+            modifier = Modifier
+                .padding(start = dimensionResource(id = R.dimen.padding_big),
+                    end = dimensionResource(id = R.dimen.padding_big))
+        )
 
-            MyComment(ItemDataComment(R.drawable.comment2,
-                stringResource(id = R.string.userName2),
-                stringResource(id = R.string.date),
-                stringResource(id = R.string.text_comment)))
-        }
+        MyComment(ItemDataComment(R.drawable.comment2,
+            stringResource(id = R.string.userName2),
+            stringResource(id = R.string.date),
+            stringResource(id = R.string.text_comment)))
+    }
 }
 
 @Composable
@@ -72,7 +75,7 @@ fun MyComment(item: ItemDataComment) {
     Column(
         modifier = Modifier.padding(all = dimensionResource(
             id = R.dimen.padding_std)
-            )
+        )
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically
@@ -93,7 +96,8 @@ fun MyComment(item: ItemDataComment) {
                 Text(text = item.userName,
                     style = MaterialTheme.typography.subtitle2,
                     color = White,
-                    fontSize = 16.sp
+                    fontSize = 16.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_bold_font))
                 )
 
                 Spacer(modifier = Modifier.height(dimensionResource(
@@ -103,6 +107,7 @@ fun MyComment(item: ItemDataComment) {
                     style = MaterialTheme.typography.body2,
                     color = White,
                     fontSize = 12.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular_font)),
                     modifier = Modifier
                         .alpha(0.4f))
             }
@@ -113,7 +118,8 @@ fun MyComment(item: ItemDataComment) {
 
         Text(text = item.text,
             color = Grey,
-            fontSize = 12.sp)
+            fontSize = 12.sp,
+            fontFamily = FontFamily(Font(R.font.sk_modernist_regular_font)))
 
     }
 }
