@@ -58,26 +58,7 @@ fun DotaScreen() {
             Comments()
         }
         item {
-            Card(
-                shape = RoundedCornerShape(10.dp),
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(start = 24.dp, end = 24.dp)
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(Yellow),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = stringResource(id = R.string.install),
-                        fontSize = 24.sp,
-                        modifier = Modifier
-                            .padding(top = 12.dp, bottom = 12.dp)
-
-                    )
-                }
-            }
+            ButtonInstall()
         }
     }
 }
