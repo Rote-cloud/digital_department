@@ -19,9 +19,9 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.input.pointer.pointerInteropFilter
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddotascreen.ui.theme.Yellow
 import kotlinx.coroutines.delay
@@ -36,10 +36,12 @@ fun ButtonInstall(
 
     Button(
         onClick = { isButtonPressed = true },
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(dimensionResource(id = R.dimen.rounded_std)),
         colors = ButtonDefaults.buttonColors(backgroundColor = Yellow),
         modifier = Modifier
-            .padding(start = 24.dp, end = 24.dp, bottom = 24.dp)
+            .padding(start = dimensionResource(id = R.dimen.padding_std),
+                end = dimensionResource(id = R.dimen.padding_std),
+                bottom = dimensionResource(id = R.dimen.padding_std))
             .scale(if (isButtonPressed) 0.9f else 1f)
             .pointerInteropFilter {
                 isButtonPressed = it.action == MotionEvent.ACTION_DOWN
@@ -54,7 +56,8 @@ fun ButtonInstall(
             Text(text = stringResource(id = R.string.install),
                 fontSize = 20.sp,
                 modifier = Modifier
-                    .padding(top = 8.dp, bottom = 8.dp)
+                    .padding(top = dimensionResource(id = R.dimen.padding_verysmall),
+                        bottom = dimensionResource(id = R.dimen.padding_verysmall))
 
             )
         }

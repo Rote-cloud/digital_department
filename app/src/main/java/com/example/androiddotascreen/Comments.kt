@@ -18,14 +18,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.toColorInt
 import com.example.androiddotascreen.ui.theme.DarkGrey3
 import com.example.androiddotascreen.ui.theme.Grey
 import com.example.androiddotascreen.ui.theme.White
@@ -45,10 +44,11 @@ fun Comments(
         Column(
             modifier= Modifier
                 .fillMaxWidth()
-                .padding(bottom = 24.dp)
+                .padding(bottom = dimensionResource(id = R.dimen.padding_std))
         ) {
 
-            MyComment(ItemDataComment(R.drawable.comment1, stringResource(id = R.string.userName1),
+            MyComment(ItemDataComment(R.drawable.comment1,
+                stringResource(id = R.string.userName1),
                 stringResource(id = R.string.date),
                 stringResource(id = R.string.text_comment)))
 
@@ -56,10 +56,12 @@ fun Comments(
                 color = DarkGrey3,
                 thickness = 1.dp,
                 modifier = Modifier
-                    .padding(start = 40.dp, end = 40.dp)
+                    .padding(start = dimensionResource(id = R.dimen.padding_big),
+                        end = dimensionResource(id = R.dimen.padding_big))
             )
 
-            MyComment(ItemDataComment(R.drawable.comment2, stringResource(id = R.string.userName2),
+            MyComment(ItemDataComment(R.drawable.comment2,
+                stringResource(id = R.string.userName2),
                 stringResource(id = R.string.date),
                 stringResource(id = R.string.text_comment)))
         }
@@ -68,7 +70,8 @@ fun Comments(
 @Composable
 fun MyComment(item: ItemDataComment) {
     Column(
-        modifier = Modifier.padding(all = 24.dp
+        modifier = Modifier.padding(all = dimensionResource(
+            id = R.dimen.padding_std)
             )
     ) {
         Row(
@@ -79,29 +82,34 @@ fun MyComment(item: ItemDataComment) {
                 contentDescription = "imageComm",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(dimensionResource(id = R.dimen.padding_big))
                     .clip(CircleShape)
             )
 
-            Spacer(modifier = Modifier.width(12.dp))
+            Spacer(modifier = Modifier.width(dimensionResource(
+                id = R.dimen.padding_small)))
 
             Column {
                 Text(text = item.userName,
                     style = MaterialTheme.typography.subtitle2,
-                    color = White
+                    color = White,
+                    fontSize = 16.sp
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(dimensionResource(
+                    id = R.dimen.padding_verysmall)))
 
                 Text(text = item.date,
                     style = MaterialTheme.typography.body2,
                     color = White,
+                    fontSize = 12.sp,
                     modifier = Modifier
                         .alpha(0.4f))
             }
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(
+            id = R.dimen.padding_small)))
 
         Text(text = item.text,
             color = Grey,

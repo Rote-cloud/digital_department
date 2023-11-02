@@ -1,6 +1,5 @@
 package com.example.androiddotascreen
 
-import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,12 +18,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.toColorInt
 import com.example.androiddotascreen.ui.theme.DarkGrey
 import com.example.androiddotascreen.ui.theme.DarkGrey2
 import com.example.androiddotascreen.ui.theme.White
@@ -40,12 +39,14 @@ fun DotaScreenHeader(
             contentScale = ContentScale.FillWidth,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(dimensionResource(id = R.dimen.dota_header_height))
 
         )
         Box(
             modifier = Modifier
-                .padding(start = 24.dp, top = 180.dp, end = 40.dp)
+                .padding(start = dimensionResource(id = R.dimen.padding_std),
+                    top = dimensionResource(id = R.dimen.dota_logo_top),
+                    end = dimensionResource(id = R.dimen.padding_big))
         ) {
             Dota_logo()
         }
@@ -57,7 +58,7 @@ fun DotaScreenHeader(
 fun Dota_logo() {
     Row(verticalAlignment = Alignment.Bottom) {
         Card(
-            shape = RoundedCornerShape(12.dp),
+            shape = RoundedCornerShape(dimensionResource(id = R.dimen.rounded_std)),
             modifier = Modifier
         ) {
             Box(modifier = Modifier
@@ -65,7 +66,7 @@ fun Dota_logo() {
                 .border(
                     width = 2.dp,
                     color = DarkGrey,
-                    shape = RoundedCornerShape(12.dp)
+                    shape = RoundedCornerShape(dimensionResource(id = R.dimen.rounded_std))
                 ),
                 contentAlignment = Alignment.Center
             ) {
@@ -73,14 +74,16 @@ fun Dota_logo() {
                     painter = painterResource(id = R.drawable.dota_logo),
                     contentDescription = "dota logo",
                     modifier = Modifier
-                        .padding(14.dp)
-                        .size(50.dp)
+                        .padding(dimensionResource(id = R.dimen.padding_dota_logo))
+                        .size(dimensionResource(id = R.dimen.dota_logo_size))
 
                 )
             }
         }
         Column(
-            modifier = Modifier.padding(start = 12.dp, bottom = 4.dp)
+            modifier = Modifier.padding(
+                start = dimensionResource(id = R.dimen.padding_small),
+                bottom = dimensionResource(id = R.dimen.padding_veryverysmall))
         ) {
             Text(text = stringResource(R.string.dota2_name),
                 fontSize = 20.sp,
@@ -89,12 +92,15 @@ fun Dota_logo() {
             Row {
                     Image(painter = painterResource(id = R.drawable.header_grade),
                         contentDescription = "header_grade",
-                        modifier = Modifier.size(height = 16.dp, width = 70.dp)
+                        modifier = Modifier.size(
+                            height = dimensionResource(id = R.dimen.dota_logo_stars_height),
+                            width = dimensionResource(id = R.dimen.dota_logo_stars_width))
                     )
                     Text(text = stringResource(id = R.string.count_review),
                         fontSize = 12.sp,
                         color = DarkGrey2,
-                        modifier = Modifier.padding(start = 12.dp)
+                        modifier = Modifier.padding(
+                            start = dimensionResource(id = R.dimen.padding_small))
                     )
             }
         }

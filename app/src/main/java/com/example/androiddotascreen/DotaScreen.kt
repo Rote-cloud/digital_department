@@ -1,23 +1,17 @@
 package com.example.androiddotascreen
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddotascreen.ui.theme.LightGray
-import com.example.androiddotascreen.ui.theme.Yellow
 
 @Composable
 fun DotaScreen() {
@@ -43,7 +37,7 @@ fun DotaScreen() {
                 fontSize = 12.sp,
                 modifier = Modifier
                     .padding(
-                        all = 24.dp
+                        all = dimensionResource(id = R.dimen.padding_std)
                     )
                     .alpha(0.7f)
             )
